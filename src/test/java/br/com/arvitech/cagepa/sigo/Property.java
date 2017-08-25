@@ -41,11 +41,11 @@ public abstract class Property {
 	public static final String SEM_DESCONTO;
 	public static final String ID_PRODUTO;
 	
-	private static final String PROPERTIES_FILE = "br/com/huetech/calcdescontos/config.properties";
+	private static final String PROPERTIES_FILE = "br/com/arvitech/calcdescontos/config.properties";
 	
 	static{
 		IE64_DRIVE_PATH      = new File("").getAbsolutePath() + "\\src\\test\\resources\\IEDriverServer.exe";
-		CHROME_DRIVE_PATH    = new File("").getAbsolutePath() + "\\src\\test\\resources\\chromedriver.exe";
+		CHROME_DRIVE_PATH    = new File("").getAbsolutePath() + "/src/test/resources/chromedriver";
 		FIREFOX_DRIVE_PATH   = new File("").getAbsolutePath() + "\\home\\user\\bin";
 		BROWSER_NAME         = get("browser.name");
 		URL                  = get("site.address");

@@ -1,4 +1,4 @@
-package br.com.huetech.calcdescontos.test;
+package br.com.huetech.calcdescontos.test.suite;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 
 import br.com.arvitech.cagepa.sigo.Property;
 import br.com.arvitech.cagepa.sigo.Selenium;
-import br.com.huetech.calcdescontos.test.suite.AllTests;
 public class BaseTestCase {
 	
 	

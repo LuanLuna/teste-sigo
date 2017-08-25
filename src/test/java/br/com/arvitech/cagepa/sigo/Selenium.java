@@ -15,6 +15,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class Selenium {
 	
 	private static WebDriver driver = null;
+	private static final long DEFAULT_SLEEP_TIME = 1000;
 
 	/**
 	 * Verifica qual o browser escolhido no arquivo de propriedades
@@ -51,4 +52,7 @@ public class Selenium {
 		driver = null;
 	}
 	
+	public static void sleep() throws InterruptedException {
+		driver.wait(DEFAULT_SLEEP_TIME);
+	}
 }
