@@ -1,4 +1,4 @@
-package br.com.arvitech.cagepa.sigo.pages;
+package br.com.arvitech.cagepa.sigo.pages.gerenciaregional;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -6,8 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import br.com.arvitech.cagepa.sigo.Selenium;
+import br.com.arvitech.cagepa.sigo.pages.PageObjectGeneric;
 
-public class NewGerenciaRegional extends PageObjectGeneric<NewGerenciaRegional> {
+public class NewGerenciaRegionalPage extends PageObjectGeneric<NewGerenciaRegionalPage> {
 	
 	@FindBy(id = "sc_b_ins_t")
 	WebElement includeBtn;
@@ -24,7 +25,7 @@ public class NewGerenciaRegional extends PageObjectGeneric<NewGerenciaRegional> 
 	private static String siglaValue = "GQS";
 	private static String nomeValue = "Gerência de Qualidade de Software";
 	
-	public NewGerenciaRegional() {
+	public NewGerenciaRegionalPage() {
 		PageFactory.initElements(Selenium.getDriver(), this);
 	}
 	

@@ -8,11 +8,11 @@ import org.junit.runners.MethodSorters;
 import org.openqa.selenium.By;
 
 import br.com.arvitech.cagepa.sigo.Selenium;
-import br.com.arvitech.cagepa.sigo.pages.EditServico;
-import br.com.arvitech.cagepa.sigo.pages.MenuCadastros;
-import br.com.arvitech.cagepa.sigo.pages.MenuSigo;
-import br.com.arvitech.cagepa.sigo.pages.NewServico;
-import br.com.arvitech.cagepa.sigo.pages.ServicoPage;
+import br.com.arvitech.cagepa.sigo.pages.menus.MenuCadastros;
+import br.com.arvitech.cagepa.sigo.pages.menus.MenuSigo;
+import br.com.arvitech.cagepa.sigo.pages.servico.EditServicoPage;
+import br.com.arvitech.cagepa.sigo.pages.servico.NewServicoPage;
+import br.com.arvitech.cagepa.sigo.pages.servico.ServicoPage;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Servico extends BaseTestCase {
@@ -20,8 +20,8 @@ public class Servico extends BaseTestCase {
 	private MenuCadastros menuCadastros;
 	private ServicoPage servicoPage;
 	
-	private NewServico newServico;
-	private EditServico editServico;
+	private NewServicoPage newServico;
+	private EditServicoPage editServico;
 	private String baseIframeId = "//iframe[@id='iframe_item_21']";
 	private String applicationIframeId = "iframe_item_3";
 
@@ -44,7 +44,7 @@ public class Servico extends BaseTestCase {
 			servicoPage.openIncluirServico();
 			Selenium.sleep();
 			
-			newServico = new NewServico();
+			newServico = new NewServicoPage();
 //			String result = 
 			newServico.incluirServico();
 //			Assert.assertEquals("Sistema cadastrado com sucesso!", result);
@@ -54,7 +54,7 @@ public class Servico extends BaseTestCase {
 			newServico.clickCancel();
 			servicoPage.goToLastPage();
 			Selenium.sleep();
-			Assert.assertEquals(servicoPage.getLastRowName(), NewServico.getDescricaoValue());
+			Assert.assertEquals(servicoPage.getLastRowName(), NewServicoPage.getDescricaoValue());
 		}
 	}
 
@@ -67,11 +67,11 @@ public class Servico extends BaseTestCase {
 			servicoPage = new ServicoPage();
 			servicoPage.goToLastPage();
 			Selenium.sleep();
-			Assert.assertEquals(servicoPage.getLastRowName(), NewServico.getDescricaoValue());
+			Assert.assertEquals(servicoPage.getLastRowName(), NewServicoPage.getDescricaoValue());
 			servicoPage.openLastRow();
 			Selenium.sleep();
 			
-			editServico = new EditServico();
+			editServico = new EditServicoPage();
 			editServico.clickDelete();
 			Selenium.getDriver().switchTo().alert().accept();
 			Selenium.sleep();
@@ -79,7 +79,7 @@ public class Servico extends BaseTestCase {
 			Selenium.sleep();
 			
 			editServico.clickBack();
-			Assert.assertFalse(servicoPage.getLastRowName() == NewServico.getDescricaoValue());
+			Assert.assertFalse(servicoPage.getLastRowName() == NewServicoPage.getDescricaoValue());
 			Selenium.sleep();
 		}
 	}

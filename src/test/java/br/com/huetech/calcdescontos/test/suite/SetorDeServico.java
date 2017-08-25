@@ -6,11 +6,11 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 
 import br.com.arvitech.cagepa.sigo.Selenium;
-import br.com.arvitech.cagepa.sigo.pages.EditSetorDeServicoPage;
-import br.com.arvitech.cagepa.sigo.pages.MenuCadastros;
-import br.com.arvitech.cagepa.sigo.pages.MenuSigo;
-import br.com.arvitech.cagepa.sigo.pages.NewSetorDeServicoPage;
-import br.com.arvitech.cagepa.sigo.pages.SetorDeServicoPage;
+import br.com.arvitech.cagepa.sigo.pages.menus.MenuCadastros;
+import br.com.arvitech.cagepa.sigo.pages.menus.MenuSigo;
+import br.com.arvitech.cagepa.sigo.pages.setorservico.EditSetorDeServicoPage;
+import br.com.arvitech.cagepa.sigo.pages.setorservico.NewSetorDeServicoPage;
+import br.com.arvitech.cagepa.sigo.pages.setorservico.SetorDeServicoPage;
 
 public class SetorDeServico extends BaseTestCase {
 	private MenuSigo menuSigo;

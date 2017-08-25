@@ -8,11 +8,11 @@ import org.junit.runners.MethodSorters;
 import org.openqa.selenium.By;
 
 import br.com.arvitech.cagepa.sigo.Selenium;
-import br.com.arvitech.cagepa.sigo.pages.EditSistemaDeAbastecimento;
-import br.com.arvitech.cagepa.sigo.pages.MenuCadastros;
-import br.com.arvitech.cagepa.sigo.pages.MenuSigo;
-import br.com.arvitech.cagepa.sigo.pages.NewSistemaDeAbastecimento;
-import br.com.arvitech.cagepa.sigo.pages.SistemaDeAbastecimentoPage;
+import br.com.arvitech.cagepa.sigo.pages.menus.MenuCadastros;
+import br.com.arvitech.cagepa.sigo.pages.menus.MenuSigo;
+import br.com.arvitech.cagepa.sigo.pages.sistemaabastecimento.EditSistemaDeAbastecimentoPage;
+import br.com.arvitech.cagepa.sigo.pages.sistemaabastecimento.NewSistemaDeAbastecimentoPage;
+import br.com.arvitech.cagepa.sigo.pages.sistemaabastecimento.SistemaDeAbastecimentoPage;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SistemaDeAbastecimento extends BaseTestCase {
@@ -20,8 +20,8 @@ public class SistemaDeAbastecimento extends BaseTestCase {
 	private MenuCadastros menuCadastros;
 	private SistemaDeAbastecimentoPage sistemaDeAbastecimentoPage;
 	
-	private NewSistemaDeAbastecimento newSistemaDeAbastecimento;
-	private EditSistemaDeAbastecimento editSistemaDeAbastecimento;
+	private NewSistemaDeAbastecimentoPage newSistemaDeAbastecimento;
+	private EditSistemaDeAbastecimentoPage editSistemaDeAbastecimento;
 	private String baseIframeId = "//iframe[@id='iframe_item_21']";
 	private String applicationIframeId = "iframe_item_6";
 
@@ -44,7 +44,7 @@ public class SistemaDeAbastecimento extends BaseTestCase {
 			sistemaDeAbastecimentoPage.openIncluirSistemaDeAbastecimento();
 			Selenium.sleep();
 			
-			newSistemaDeAbastecimento = new NewSistemaDeAbastecimento();
+			newSistemaDeAbastecimento = new NewSistemaDeAbastecimentoPage();
 //			String result = 
 			newSistemaDeAbastecimento.incluirSistemaDeAbastecimento();
 //			Assert.assertEquals("Sistema cadastrado com sucesso!", result);
@@ -54,7 +54,7 @@ public class SistemaDeAbastecimento extends BaseTestCase {
 			newSistemaDeAbastecimento.clickCancel();
 			sistemaDeAbastecimentoPage.goToLastPage();
 			Selenium.sleep();
-			Assert.assertEquals(sistemaDeAbastecimentoPage.getLastRowName(), NewSistemaDeAbastecimento.getNomeValue());
+			Assert.assertEquals(sistemaDeAbastecimentoPage.getLastRowName(), NewSistemaDeAbastecimentoPage.getNomeValue());
 		}
 	}
 
@@ -67,11 +67,11 @@ public class SistemaDeAbastecimento extends BaseTestCase {
 			sistemaDeAbastecimentoPage = new SistemaDeAbastecimentoPage();
 			sistemaDeAbastecimentoPage.goToLastPage();
 			Selenium.sleep();
-			Assert.assertEquals(sistemaDeAbastecimentoPage.getLastRowName(), NewSistemaDeAbastecimento.getNomeValue());
+			Assert.assertEquals(sistemaDeAbastecimentoPage.getLastRowName(), NewSistemaDeAbastecimentoPage.getNomeValue());
 			sistemaDeAbastecimentoPage.openLastRow();
 			Selenium.sleep();
 			
-			editSistemaDeAbastecimento = new EditSistemaDeAbastecimento();
+			editSistemaDeAbastecimento = new EditSistemaDeAbastecimentoPage();
 			editSistemaDeAbastecimento.clickDelete();
 			Selenium.getDriver().switchTo().alert().accept();
 			Selenium.sleep();
@@ -79,7 +79,7 @@ public class SistemaDeAbastecimento extends BaseTestCase {
 			Selenium.sleep();
 			
 			editSistemaDeAbastecimento.clickBack();
-			Assert.assertFalse(sistemaDeAbastecimentoPage.getLastRowName() == NewSistemaDeAbastecimento.getNomeValue());
+			Assert.assertFalse(sistemaDeAbastecimentoPage.getLastRowName() == NewSistemaDeAbastecimentoPage.getNomeValue());
 			Selenium.sleep();
 		}
 	}

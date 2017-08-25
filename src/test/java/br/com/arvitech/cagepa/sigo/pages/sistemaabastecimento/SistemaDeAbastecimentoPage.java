@@ -1,4 +1,4 @@
-package br.com.arvitech.cagepa.sigo.pages;
+package br.com.arvitech.cagepa.sigo.pages.sistemaabastecimento;
 
 import java.util.List;
 
@@ -8,21 +8,22 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import br.com.arvitech.cagepa.sigo.Selenium;
+import br.com.arvitech.cagepa.sigo.pages.PageObjectGeneric;
 
-public class GerenciaRegionalPage extends PageObjectGeneric<GerenciaRegionalPage> {
+public class SistemaDeAbastecimentoPage extends PageObjectGeneric<SistemaDeAbastecimentoPage> {
 	
 	@FindBy(id = "sc_b_new_top")
-	WebElement newGerenciaRegionalBtn;
+	WebElement newSistemaDeAbastecimentoBtn;
 	
 	@FindBy(id = "last_bot")
 	WebElement lastPageBtn;
 
-	public GerenciaRegionalPage() {
+	public SistemaDeAbastecimentoPage() {
 		PageFactory.initElements(Selenium.getDriver(), this);
 	}
 	
-	public void openIncluirGerenciaRegional() throws InterruptedException {
-		newGerenciaRegionalBtn.click();
+	public void openIncluirSistemaDeAbastecimento() throws InterruptedException {
+		newSistemaDeAbastecimentoBtn.click();
 	}
 	
 	public void goToLastPage() {

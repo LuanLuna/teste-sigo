@@ -1,10 +1,11 @@
-package br.com.arvitech.cagepa.sigo.pages;
+package br.com.arvitech.cagepa.sigo.pages.setorservico;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import br.com.arvitech.cagepa.sigo.Selenium;
+import br.com.arvitech.cagepa.sigo.pages.PageObjectGeneric;
 
 public class EditSetorDeServicoPage extends PageObjectGeneric<EditSetorDeServicoPage> {
 	

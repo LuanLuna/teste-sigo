@@ -1,4 +1,4 @@
-package br.com.arvitech.cagepa.sigo.pages;
+package br.com.arvitech.cagepa.sigo.pages.setorservico;
 
 import java.util.List;
 
@@ -8,21 +8,22 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import br.com.arvitech.cagepa.sigo.Selenium;
+import br.com.arvitech.cagepa.sigo.pages.PageObjectGeneric;
 
-public class SistemaDeAbastecimentoPage extends PageObjectGeneric<SistemaDeAbastecimentoPage> {
+public class SetorDeServicoPage extends PageObjectGeneric<SetorDeServicoPage> {
 	
 	@FindBy(id = "sc_b_new_top")
-	WebElement newSistemaDeAbastecimentoBtn;
+	WebElement newSetorDeServicoBtn;
 	
 	@FindBy(id = "last_bot")
 	WebElement lastPageBtn;
 
-	public SistemaDeAbastecimentoPage() {
+	public SetorDeServicoPage() {
 		PageFactory.initElements(Selenium.getDriver(), this);
 	}
 	
-	public void openIncluirSistemaDeAbastecimento() throws InterruptedException {
-		newSistemaDeAbastecimentoBtn.click();
+	public void openIncluirSetorServico() throws InterruptedException {
+		newSetorDeServicoBtn.click();
 	}
 	
 	public void goToLastPage() {

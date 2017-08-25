@@ -1,4 +1,4 @@
-package br.com.arvitech.cagepa.sigo.pages;
+package br.com.arvitech.cagepa.sigo.pages.sistemaabastecimento;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -6,8 +6,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import br.com.arvitech.cagepa.sigo.Selenium;
+import br.com.arvitech.cagepa.sigo.pages.PageObjectGeneric;
 
-public class NewSistemaDeAbastecimento extends PageObjectGeneric<NewSistemaDeAbastecimento> {
+public class NewSistemaDeAbastecimentoPage extends PageObjectGeneric<NewSistemaDeAbastecimentoPage> {
 	
 	@FindBy(id = "sc_b_ins_t")
 	WebElement includeBtn;
@@ -31,7 +32,7 @@ public class NewSistemaDeAbastecimento extends PageObjectGeneric<NewSistemaDeAba
 	private static String tipoValue = "A";
 	private static String nomeValue = "Sistema Unipê";
 	
-	public NewSistemaDeAbastecimento() {
+	public NewSistemaDeAbastecimentoPage() {
 		PageFactory.initElements(Selenium.getDriver(), this);
 	}
 	

@@ -1,4 +1,4 @@
-package br.com.arvitech.cagepa.sigo.pages;
+package br.com.arvitech.cagepa.sigo.pages.servico;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -6,8 +6,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import br.com.arvitech.cagepa.sigo.Selenium;
+import br.com.arvitech.cagepa.sigo.pages.PageObjectGeneric;
 
-public class NewServico extends PageObjectGeneric<NewServico> {
+public class NewServicoPage extends PageObjectGeneric<NewServicoPage> {
 	
 	@FindBy(id = "sc_b_ins_t")
 	WebElement includeBtn;
@@ -27,7 +28,7 @@ public class NewServico extends PageObjectGeneric<NewServico> {
 	private static String tipoValue = "E";
 	private static String descricaoValue = "Vazamento Teste";
 	
-	public NewServico() {
+	public NewServicoPage() {
 		PageFactory.initElements(Selenium.getDriver(), this);
 	}
 	

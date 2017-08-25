@@ -10,14 +10,14 @@ import org.openqa.selenium.WebDriver;
 import br.com.arvitech.cagepa.sigo.Property;
 import br.com.arvitech.cagepa.sigo.Selenium;
 import br.com.arvitech.cagepa.sigo.pages.Login;
-import br.com.arvitech.cagepa.sigo.pages.MenuSic;
+import br.com.arvitech.cagepa.sigo.pages.menus.MenuSic;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-//	SetorDeServico.class,
-//	GerenciaRegional.class,
-//	SistemaDeAbastecimento.class,
-//	Servico.class,
+	SetorDeServico.class,
+	GerenciaRegional.class,
+	SistemaDeAbastecimento.class,
+	Servico.class
 })
 
 public class AllTests {

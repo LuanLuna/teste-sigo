@@ -6,19 +6,19 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 
 import br.com.arvitech.cagepa.sigo.Selenium;
-import br.com.arvitech.cagepa.sigo.pages.EditGerenciaRegional;
-import br.com.arvitech.cagepa.sigo.pages.GerenciaRegionalPage;
-import br.com.arvitech.cagepa.sigo.pages.MenuCadastros;
-import br.com.arvitech.cagepa.sigo.pages.MenuSigo;
-import br.com.arvitech.cagepa.sigo.pages.NewGerenciaRegional;
+import br.com.arvitech.cagepa.sigo.pages.gerenciaregional.EditGerenciaRegionalPage;
+import br.com.arvitech.cagepa.sigo.pages.gerenciaregional.GerenciaRegionalPage;
+import br.com.arvitech.cagepa.sigo.pages.gerenciaregional.NewGerenciaRegionalPage;
+import br.com.arvitech.cagepa.sigo.pages.menus.MenuCadastros;
+import br.com.arvitech.cagepa.sigo.pages.menus.MenuSigo;
 
 public class GerenciaRegional extends BaseTestCase {
 	private MenuSigo menuSigo;
 	private MenuCadastros menuCadastros;
 	private GerenciaRegionalPage gerenciaRegionalPage;
 	
-	private NewGerenciaRegional newGerenciaRegional;
-	private EditGerenciaRegional editGerenciaRegional;
+	private NewGerenciaRegionalPage newGerenciaRegional;
+	private EditGerenciaRegionalPage editGerenciaRegional;
 	private String baseIframeId = "//iframe[@id='iframe_item_21']";
 	private String applicationIframeId = "iframe_item_1";
 
@@ -41,7 +41,7 @@ public class GerenciaRegional extends BaseTestCase {
 			gerenciaRegionalPage.openIncluirGerenciaRegional();
 			Selenium.sleep();
 			
-			newGerenciaRegional = new NewGerenciaRegional();
+			newGerenciaRegional = new NewGerenciaRegionalPage();
 			String result = newGerenciaRegional.incluirGerenciaRegional();
 			Assert.assertEquals("Gerência Regional cadastrada com sucesso!", result);
 		}
@@ -56,17 +56,17 @@ public class GerenciaRegional extends BaseTestCase {
 			gerenciaRegionalPage = new GerenciaRegionalPage();
 			gerenciaRegionalPage.goToLastPage();
 			Selenium.sleep();
-			Assert.assertEquals(gerenciaRegionalPage.getLastRowName(), NewGerenciaRegional.getNomeValue());
+			Assert.assertEquals(gerenciaRegionalPage.getLastRowName(), NewGerenciaRegionalPage.getNomeValue());
 			gerenciaRegionalPage.openLastRow();
 			Selenium.sleep();
-			editGerenciaRegional = new EditGerenciaRegional();
+			editGerenciaRegional = new EditGerenciaRegionalPage();
 			editGerenciaRegional.clickDelete();
 			Selenium.getDriver().switchTo().alert().accept();
 			Selenium.sleep();
 			goToApplicationIframe();
 			Selenium.sleep();
 			editGerenciaRegional.clickBack();
-			Assert.assertFalse(gerenciaRegionalPage.getLastRowName() == NewGerenciaRegional.getNomeValue());
+			Assert.assertFalse(gerenciaRegionalPage.getLastRowName() == NewGerenciaRegionalPage.getNomeValue());
 		}
 	}
 	

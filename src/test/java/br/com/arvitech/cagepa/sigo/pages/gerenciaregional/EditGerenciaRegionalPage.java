@@ -1,12 +1,13 @@
-package br.com.arvitech.cagepa.sigo.pages;
+package br.com.arvitech.cagepa.sigo.pages.gerenciaregional;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import br.com.arvitech.cagepa.sigo.Selenium;
+import br.com.arvitech.cagepa.sigo.pages.PageObjectGeneric;
 
-public class EditServico extends PageObjectGeneric<EditServico> {
+public class EditGerenciaRegionalPage extends PageObjectGeneric<EditGerenciaRegionalPage> {
 	
 	@FindBy(id = "sc_b_upd_t")
 	WebElement saveBtn;
@@ -14,19 +15,16 @@ public class EditServico extends PageObjectGeneric<EditServico> {
 	@FindBy(xpath = "//a[@title='Voltar à pagina anterior']")
 	WebElement backBtn;
 	
-	@FindBy(id = "id_sc_field_descricao")
-	WebElement descricaoField;
+	@FindBy(id = "id_sc_field_sigla")
+	WebElement siglaField;
 	
-	@FindBy(id = "id_sc_field_tipo")
-	WebElement tipoSelect;
-	
-	@FindBy(id = "id_sc_field_tipos_unidade_operacional")
-	WebElement unidadeOperacionalSelect;
+	@FindBy(id = "id_sc_field_nome")
+	WebElement nomeField;
 	
 	@FindBy(id = "sc_b_del_t")
 	WebElement deleteBtn;
 	
-	public EditServico() {
+	public EditGerenciaRegionalPage() {
 		PageFactory.initElements(Selenium.getDriver(), this);
 	}
 	
