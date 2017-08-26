@@ -6,9 +6,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import br.com.arvitech.cagepa.sigo.Selenium;
-import br.com.arvitech.cagepa.sigo.pages.PageObjectGeneric;
+import br.com.arvitech.cagepa.sigo.pages.GenericPageObject;
 
-public class NewServicoPage extends PageObjectGeneric<NewServicoPage> {
+public class NewServicoPage extends GenericPageObject<NewServicoPage> {
 	
 	@FindBy(id = "sc_b_ins_t")
 	WebElement includeBtn;

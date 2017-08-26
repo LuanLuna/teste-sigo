@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import br.com.arvitech.cagepa.sigo.Selenium;
-import br.com.arvitech.cagepa.sigo.pages.PageObjectGeneric;
+import br.com.arvitech.cagepa.sigo.pages.GenericPageObject;
 
-public class MenuSigo extends PageObjectGeneric<MenuSigo> {
+public class MenuSigo extends GenericPageObject<MenuSigo> {
 
 	public MenuSigo() {
 		PageFactory.initElements(Selenium.getDriver(), this);
@@ -16,7 +16,9 @@ public class MenuSigo extends PageObjectGeneric<MenuSigo> {
 	@FindBy(xpath = "//span[contains(text(), 'Cadastros')]")
 	WebElement botaoCadastros;
 	
-	public void openMenuCadastros() throws InterruptedException{
+	public MenuCadastros openMenuCadastros() throws InterruptedException{
 		botaoCadastros.click();
+		sleep();
+		return new MenuCadastros();
 	}
 }

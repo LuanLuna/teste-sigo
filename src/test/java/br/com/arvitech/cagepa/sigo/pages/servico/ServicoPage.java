@@ -8,9 +8,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import br.com.arvitech.cagepa.sigo.Selenium;
-import br.com.arvitech.cagepa.sigo.pages.PageObjectGeneric;
+import br.com.arvitech.cagepa.sigo.pages.GenericPageObject;
 
-public class ServicoPage extends PageObjectGeneric<ServicoPage> {
+public class ServicoPage extends GenericPageObject<ServicoPage> {
 	
 	@FindBy(id = "sc_b_new_top")
 	WebElement newServicoBtn;
@@ -22,19 +22,23 @@ public class ServicoPage extends PageObjectGeneric<ServicoPage> {
 		PageFactory.initElements(Selenium.getDriver(), this);
 	}
 	
-	public void openIncluirServico() throws InterruptedException {
+	public NewServicoPage openIncluirServico() throws InterruptedException {
 		newServicoBtn.click();
+		sleep();
+		return new NewServicoPage();
 	}
 	
 	public void goToLastPage() {
 		lastPageBtn.click();
 	}
 	
-	public void openLastRow() {
+	public EditServicoPage openLastRow() throws InterruptedException {
 		List<WebElement> rows = Selenium.getDriver().findElements(By.id("bedit"));
 		if (rows.size() > 0) {
 			rows.get(rows.size()-1).click();
 		}
+		sleep();
+		return new EditServicoPage();
 	}
 	
 	public String getLastRowName() {

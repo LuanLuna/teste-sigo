@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import br.com.arvitech.cagepa.sigo.Selenium;
-import br.com.arvitech.cagepa.sigo.pages.PageObjectGeneric;
+import br.com.arvitech.cagepa.sigo.pages.GenericPageObject;
 
-public class NewGerenciaRegionalPage extends PageObjectGeneric<NewGerenciaRegionalPage> {
+public class NewGerenciaRegionalPage extends GenericPageObject<NewGerenciaRegionalPage> {
 	
 	@FindBy(id = "sc_b_ins_t")
 	WebElement includeBtn;

@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import br.com.arvitech.cagepa.sigo.Selenium;
-import br.com.arvitech.cagepa.sigo.pages.PageObjectGeneric;
+import br.com.arvitech.cagepa.sigo.pages.GenericPageObject;
 
-public class MenuSic extends PageObjectGeneric<MenuSic> {
+public class MenuSic extends GenericPageObject<MenuSic> {
 
 	public MenuSic() {
 		PageFactory.initElements(Selenium.getDriver(), this);

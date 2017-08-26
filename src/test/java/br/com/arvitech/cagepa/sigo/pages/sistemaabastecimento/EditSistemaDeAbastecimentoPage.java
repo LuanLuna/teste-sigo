@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import br.com.arvitech.cagepa.sigo.Selenium;
-import br.com.arvitech.cagepa.sigo.pages.PageObjectGeneric;
+import br.com.arvitech.cagepa.sigo.pages.GenericPageObject;
 
-public class EditSistemaDeAbastecimentoPage extends PageObjectGeneric<EditSistemaDeAbastecimentoPage> {
+public class EditSistemaDeAbastecimentoPage extends GenericPageObject<EditSistemaDeAbastecimentoPage> {
 	
 	@FindBy(id = "sc_b_upd_t")
 	WebElement saveBtn;

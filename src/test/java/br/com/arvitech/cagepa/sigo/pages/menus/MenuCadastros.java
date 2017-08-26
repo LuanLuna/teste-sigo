@@ -5,9 +5,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import br.com.arvitech.cagepa.sigo.Selenium;
-import br.com.arvitech.cagepa.sigo.pages.PageObjectGeneric;
+import br.com.arvitech.cagepa.sigo.pages.GenericPageObject;
+import br.com.arvitech.cagepa.sigo.pages.gerenciaregional.GerenciaRegionalPage;
+import br.com.arvitech.cagepa.sigo.pages.servico.ServicoPage;
+import br.com.arvitech.cagepa.sigo.pages.setorservico.SetorDeServicoPage;
+import br.com.arvitech.cagepa.sigo.pages.sistemaabastecimento.SistemaDeAbastecimentoPage;
 
-public class MenuCadastros extends PageObjectGeneric<MenuCadastros> {
+public class MenuCadastros extends GenericPageObject<MenuCadastros> {
 
 	public MenuCadastros() {
 		PageFactory.initElements(Selenium.getDriver(), this);
@@ -25,19 +29,27 @@ public class MenuCadastros extends PageObjectGeneric<MenuCadastros> {
 	@FindBy(xpath = "//a[contains(text(), 'Manter Serviço')]")
 	WebElement manterServicoMenu;
 	
-	public void openManterSetorDeServico() throws InterruptedException {
+	public SetorDeServicoPage openManterSetorDeServico() throws InterruptedException {
 		manterSetorMenu.click();
+		sleep();
+		return new SetorDeServicoPage();
 	}
 	
-	public void openManterGerenciaRegional() throws InterruptedException {
+	public GerenciaRegionalPage openManterGerenciaRegional() throws InterruptedException {
 		manterGerenciaRegionalMenu.click();
+		sleep();
+		return new GerenciaRegionalPage();
 	}
 	
-	public void openManterSistemaDeAbastecimento() throws InterruptedException {
+	public SistemaDeAbastecimentoPage openManterSistemaDeAbastecimento() throws InterruptedException {
 		manterSistemaDeAbastecimentoMenu.click();
+		sleep();
+		return new SistemaDeAbastecimentoPage();
 	}
 	
-	public void openManterServico() throws InterruptedException {
+	public ServicoPage openManterServico() throws InterruptedException {
 		manterServicoMenu.click();
+		sleep();
+		return new ServicoPage();
 	}
 }
