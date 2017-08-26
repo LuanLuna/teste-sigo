@@ -1,10 +1,8 @@
 package br.com.arvitech.cagepa.sigo.pages.setorservico;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
 import br.com.arvitech.cagepa.sigo.Selenium;
 import br.com.arvitech.cagepa.sigo.pages.GenericPageObject;
@@ -46,17 +44,15 @@ public class NewSetorDeServicoPage extends GenericPageObject<NewSetorDeServicoPa
 	}
 	
 	public String incluirSetorServico() throws InterruptedException {
-		(new Select(gerenciaRegionalSelect)).selectByValue(gerenciaRegionalValue);
-		siglaField.sendKeys(siglaValue);
-		nomeField.sendKeys(nomeValue);
-		(new Select(atuacaoSelect)).selectByValue(atuacaoValue);
-		areaField.sendKeys(areaValue);
-		
+		fillSelect(gerenciaRegionalSelect, gerenciaRegionalValue);
+		fillField(siglaField, siglaValue);
+		fillField(nomeField, nomeValue);
+		fillSelect(atuacaoSelect, atuacaoValue);
+		fillField(areaField, areaValue);		
 		includeBtn.click();
-		Selenium.getDriver().switchTo().alert().accept();
-		Selenium.sleep();
-		String result = Selenium.getDriver().findElement(By.className("scFormDataOdd")).getText();
 		
+		acceptAlert();
+		String result = getElementText(getElementByClassName("scFormDataOdd"));
 		return result;
 	}
 

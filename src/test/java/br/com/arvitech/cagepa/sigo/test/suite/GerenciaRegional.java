@@ -55,6 +55,8 @@ public class GerenciaRegional extends BaseTestCase {
 			editGerenciaRegional = gerenciaRegionalPage.openLastRow();
 			editGerenciaRegional.clickDelete();
 			editGerenciaRegional.acceptAlert();
+			Assert.assertEquals((editGerenciaRegional.getVisibleElementsById("id_error_display_fixed")).size(), 0);
+			menuSigo.sleep();
 			goToApplicationIframe();
 			
 			editGerenciaRegional.sleep();

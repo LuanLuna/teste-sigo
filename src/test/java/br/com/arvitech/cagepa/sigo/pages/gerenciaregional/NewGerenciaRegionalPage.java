@@ -1,6 +1,5 @@
 package br.com.arvitech.cagepa.sigo.pages.gerenciaregional;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -30,14 +29,12 @@ public class NewGerenciaRegionalPage extends GenericPageObject<NewGerenciaRegion
 	}
 	
 	public String incluirGerenciaRegional() throws InterruptedException {
-		siglaField.sendKeys(siglaValue);
-		nomeField.sendKeys(nomeValue);
+		fillField(siglaField, siglaValue);
+		fillField(nomeField, nomeValue);
 		includeBtn.click();
 		
-		Selenium.getDriver().switchTo().alert().accept();
-		Selenium.sleep();
-		String result = Selenium.getDriver().findElement(By.className("scFormDataOdd")).getText();
-		
+		acceptAlert();
+		String result = getElementText(getElementByClassName("scFormDataOdd"));
 		return result;
 	}
 

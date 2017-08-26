@@ -55,6 +55,8 @@ public class SistemaDeAbastecimento extends BaseTestCase {
 			editSistemaDeAbastecimento = sistemaDeAbastecimentoPage.openLastRow();
 			editSistemaDeAbastecimento.clickDelete();
 			editSistemaDeAbastecimento.acceptAlert();
+			Assert.assertEquals((editSistemaDeAbastecimento.getVisibleElementsById("id_error_display_fixed")).size(), 0);
+			menuSigo.sleep();
 			goToApplicationIframe();
 			
 			editSistemaDeAbastecimento.sleep();

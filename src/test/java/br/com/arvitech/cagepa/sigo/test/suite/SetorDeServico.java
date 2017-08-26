@@ -55,6 +55,8 @@ public class SetorDeServico extends BaseTestCase {
 			editSetorDeServico = setorDeServico.openLastRow();
 			editSetorDeServico.clickDelete();
 			editSetorDeServico.acceptAlert();
+			Assert.assertEquals((editSetorDeServico.getVisibleElementsById("id_error_display_fixed")).size(), 0);
+			menuSigo.sleep();
 			goToApplicationIframe();
 			
 			editSetorDeServico.sleep();

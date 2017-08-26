@@ -55,6 +55,8 @@ public class Servico extends BaseTestCase {
 			editServico = servicoPage.openLastRow();
 			editServico.clickDelete();
 			editServico.acceptAlert();
+			Assert.assertEquals((editServico.getVisibleElementsById("id_error_display_fixed")).size(), 0);
+			menuSigo.sleep();
 			goToApplicationIframe();
 			
 			editServico.sleep();

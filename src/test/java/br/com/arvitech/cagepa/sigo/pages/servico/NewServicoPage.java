@@ -3,7 +3,6 @@ package br.com.arvitech.cagepa.sigo.pages.servico;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
 import br.com.arvitech.cagepa.sigo.Selenium;
 import br.com.arvitech.cagepa.sigo.pages.GenericPageObject;
@@ -33,15 +32,12 @@ public class NewServicoPage extends GenericPageObject<NewServicoPage> {
 	}
 	
 	public String incluirServico() throws InterruptedException {
-		descricaoField.sendKeys(descricaoValue);
-		(new Select(tipoSelect)).selectByValue(tipoValue);
+		fillField(descricaoField, descricaoValue);
+		fillSelect(tipoSelect, tipoValue);
 		includeBtn.click();
 		
-//		Selenium.getDriver().switchTo().alert().accept();
-//		Selenium.sleep();
-//		String result = Selenium.getDriver().findElement(By.className("scFormDataOdd")).getText();
-		String result = "";
-		
+		acceptAlert();
+		String result = getElementText(getElementByClassName("scFormDataOdd"));
 		return result;
 	}
 	

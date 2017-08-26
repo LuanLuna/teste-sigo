@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import br.com.arvitech.cagepa.sigo.Selenium;
 import br.com.arvitech.cagepa.sigo.pages.GenericPageObject;
 import br.com.arvitech.cagepa.sigo.pages.gerenciaregional.GerenciaRegionalPage;
+import br.com.arvitech.cagepa.sigo.pages.insumo.InsumoPage;
 import br.com.arvitech.cagepa.sigo.pages.servico.ServicoPage;
 import br.com.arvitech.cagepa.sigo.pages.setorservico.SetorDeServicoPage;
 import br.com.arvitech.cagepa.sigo.pages.sistemaabastecimento.SistemaDeAbastecimentoPage;
@@ -28,6 +29,9 @@ public class MenuCadastros extends GenericPageObject<MenuCadastros> {
 	
 	@FindBy(xpath = "//a[contains(text(), 'Manter Serviço')]")
 	WebElement manterServicoMenu;
+	
+	@FindBy(xpath = "//a[contains(text(), 'Manter Insumo')]")
+	WebElement manterInsumoMenu;
 	
 	public SetorDeServicoPage openManterSetorDeServico() throws InterruptedException {
 		manterSetorMenu.click();
@@ -51,5 +55,11 @@ public class MenuCadastros extends GenericPageObject<MenuCadastros> {
 		manterServicoMenu.click();
 		sleep();
 		return new ServicoPage();
+	}
+	
+	public InsumoPage openManterInsumo() throws InterruptedException {
+		manterInsumoMenu.click();
+		sleep();
+		return new InsumoPage();
 	}
 }

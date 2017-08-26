@@ -3,7 +3,6 @@ package br.com.arvitech.cagepa.sigo.pages.sistemaabastecimento;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
 import br.com.arvitech.cagepa.sigo.Selenium;
 import br.com.arvitech.cagepa.sigo.pages.GenericPageObject;
@@ -37,16 +36,13 @@ public class NewSistemaDeAbastecimentoPage extends GenericPageObject<NewSistemaD
 	}
 	
 	public String incluirSistemaDeAbastecimento() throws InterruptedException {
-		(new Select(gerenciaRegionalSelect)).selectByValue(gerenciaRegionalValue);
-		nomeField.sendKeys(nomeValue);
-		(new Select(tipoSelect)).selectByValue(tipoValue);
+		fillSelect(gerenciaRegionalSelect, gerenciaRegionalValue);
+		fillField(nomeField, nomeValue);
+		fillSelect(tipoSelect, tipoValue);
 		includeBtn.click();
 		
-//		Selenium.getDriver().switchTo().alert().accept();
-//		Selenium.sleep();
-//		String result = Selenium.getDriver().findElement(By.className("scFormDataOdd")).getText();
-		String result = "";
-		
+		acceptAlert();
+		String result = getElementText(getElementByClassName("scFormDataOdd"));
 		return result;
 	}
 

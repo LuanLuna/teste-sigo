@@ -14,7 +14,8 @@ import br.com.arvitech.cagepa.sigo.pages.menus.MenuSic;
 	SetorDeServico.class,
 	GerenciaRegional.class,
 	SistemaDeAbastecimento.class,
-	Servico.class
+	Servico.class,
+	Insumo.class
 })
 
 public class AllTests {

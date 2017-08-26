@@ -1,5 +1,7 @@
 package br.com.arvitech.cagepa.sigo.pages;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.junit.Assert;
@@ -66,6 +68,15 @@ public abstract class GenericPageObject<T> {
 			return driver.findElement(By.id(id));
 		} catch (Exception e) {
 			Assert.fail("Erro ao buscar pelo id ["+id+"].");
+			return null;
+		}
+	}
+	
+	public WebElement getElementByClassName(String clazz) {
+		try {
+			return driver.findElement(By.className(clazz));
+		} catch (Exception e) {
+			Assert.fail("Erro ao buscar pela class ["+clazz+"].");
 			return null;
 		}
 	}
@@ -205,5 +216,41 @@ public abstract class GenericPageObject<T> {
 	
 	public WebDriver getDriver() {
 		return driver;
+	}
+	
+	public String getElementText(WebElement element) {
+		return element.getText();
+	}
+	
+	public List<WebElement> getSearchInputVisibleList() {
+		List<WebElement> list = new ArrayList<>();
+		List<WebElement> uls = driver.findElements(By.className("ui-autocomplete"));
+		for (WebElement ul : uls) {
+			if (ul.isDisplayed()) {
+				list = ul.findElements(By.className("ui-menu-item")); 
+			}
+		}
+		return list;
+	}
+	
+	public List<WebElement> fillSearchField(WebElement element, String text) throws InterruptedException {
+		element.sendKeys(text);
+		sleep();
+		return getSearchInputVisibleList();
+	}
+	
+	public List<WebElement> getVisibleElementsById(String id) throws InterruptedException {
+		List<WebElement> list = new ArrayList<>();
+		try {
+			List<WebElement> tmpList =  driver.findElements(By.id(id));
+			for (WebElement element : tmpList) {
+				if (element.isDisplayed()) {
+					list.add(element);
+				}
+			}
+		} catch (Exception e) {
+			Assert.fail("Elementos não encontrados para o id: " + id);
+		}
+		return list;
 	}
 }
