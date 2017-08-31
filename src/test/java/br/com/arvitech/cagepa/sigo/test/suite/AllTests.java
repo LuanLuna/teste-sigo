@@ -10,7 +10,7 @@ import br.com.arvitech.cagepa.sigo.pages.Login;
 import br.com.arvitech.cagepa.sigo.pages.menus.MenuSic;
 
 /**
- * Classe principal para chamada dos testes
+ * Classe principal para chamada dos testes-
  * @author pedro
  *
  */
