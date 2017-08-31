@@ -1,5 +1,5 @@
 package br.com.arvitech.cagepa.sigo.test.suite;
-//teste commit pedro
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
@@ -8,6 +8,12 @@ import org.junit.runners.Suite;
 import br.com.arvitech.cagepa.sigo.Browser;
 import br.com.arvitech.cagepa.sigo.pages.Login;
 import br.com.arvitech.cagepa.sigo.pages.menus.MenuSic;
+
+/**
+ * Classe principal para chamada dos testes
+ * @author pedro
+ *
+ */
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
