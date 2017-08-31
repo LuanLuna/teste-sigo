@@ -1,5 +1,5 @@
 package br.com.arvitech.cagepa.sigo.test.suite;
-
+//teste commit pedro
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
