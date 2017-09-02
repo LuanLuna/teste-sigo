@@ -37,6 +37,16 @@ public class NewGerenciaRegionalPage extends GenericPageObject<NewGerenciaRegion
 		String result = getElementText(getElementByClassName("scFormDataOdd"));
 		return result;
 	}
+	
+	public String incluirGerenciaRegionalJaExistente() throws InterruptedException {
+		fillField(siglaField, siglaValue);
+		fillField(nomeField, nomeValue);
+		includeBtn.click();
+		
+		acceptAlert();
+		String result = getElementText(getElementByClassName("scFormErrorMessage"));
+		return result;
+	}
 
 	public static String getSiglaValue() {
 		return siglaValue;
