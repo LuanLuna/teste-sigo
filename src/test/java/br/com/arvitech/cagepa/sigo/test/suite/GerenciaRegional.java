@@ -64,4 +64,15 @@ public class GerenciaRegional extends BaseTestCase {
 			Assert.assertFalse(gerenciaRegionalPage.getLastRowName() == NewGerenciaRegionalPage.getNomeValue());
 		}
 	}
+	
+
+	@Test
+	public void test3_Arv4_CamposObrigatoriosNaoInformados() throws InterruptedException {
+		synchronized (driver) {
+			gerenciaRegionalPage.switchToIframe(gerenciaRegionalPage.getElementById(applicationIframeId));
+			newGerenciaRegional = gerenciaRegionalPage.openIncluirGerenciaRegional();
+			String result = newGerenciaRegional.incluirGerenciaRegionalSemCamposObrigatorios();
+			Assert.assertEquals(result.contentEquals("Atenção"),true);
+		}
+	}
 }
