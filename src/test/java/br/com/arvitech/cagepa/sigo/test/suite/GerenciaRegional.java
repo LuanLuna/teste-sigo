@@ -73,6 +73,7 @@ public class GerenciaRegional extends BaseTestCase {
 			newGerenciaRegional = gerenciaRegionalPage.openIncluirGerenciaRegional();
 			String result = newGerenciaRegional.incluirGerenciaRegionalSemCamposObrigatorios();
 			Assert.assertEquals(result.contentEquals("Atenção"),true);
+
 		}
 	}
 }

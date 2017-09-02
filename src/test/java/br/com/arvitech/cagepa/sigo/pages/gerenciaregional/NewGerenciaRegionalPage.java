@@ -39,7 +39,7 @@ public class NewGerenciaRegionalPage extends GenericPageObject<NewGerenciaRegion
 	}
 	
 	public String incluirGerenciaRegionalSemCamposObrigatorios() throws InterruptedException {
-		includeBtn.click();
+		includeBtn.click(); 
 		
 		acceptAlert();
 		String result = getElementText(getElementByClassName("scFormErrorTitleFont"));

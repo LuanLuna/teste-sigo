@@ -26,7 +26,7 @@ public class Selenium {
 		String browser = "chrome";
 		if (driver == null) {
 			if (Browser.CHROME.equals(browser)) {
-				File file = new File(new File("").getAbsolutePath() + "/src/test/resources/chromedriver.exe");
+				File file = new File(new File("").getAbsolutePath() + "/src/test/resources/chromedriver.exe"); 
 				System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
 				driver = new ChromeDriver();
 			} else if (Browser.IE.equals(browser)) {
