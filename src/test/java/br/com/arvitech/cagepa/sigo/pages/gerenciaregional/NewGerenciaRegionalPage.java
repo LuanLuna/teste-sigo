@@ -62,6 +62,15 @@ public class NewGerenciaRegionalPage extends GenericPageObject<NewGerenciaRegion
 		return result;
 	}
 	
+
+	public String incluirGerenciaRegionalSemCamposObrigatorios() throws InterruptedException {
+		includeBtn.click(); 
+		
+		acceptAlert();
+		String result = getElementText(getElementByClassName("scFormErrorTitleFont"));
+    return result;
+  }
+  
 	public String incluirGerenciaRegionalJaExistente() throws InterruptedException {
 		fillField(siglaField, siglaValue);
 		fillField(nomeField, nomeValue);
@@ -69,6 +78,7 @@ public class NewGerenciaRegionalPage extends GenericPageObject<NewGerenciaRegion
 		
 		acceptAlert();
 		String result = getElementText(getElementByClassName("scFormErrorMessage"));
+
 		return result;
 	}
 
