@@ -64,4 +64,14 @@ public class GerenciaRegional extends BaseTestCase {
 			Assert.assertFalse(gerenciaRegionalPage.getLastRowName() == NewGerenciaRegionalPage.getNomeValue());
 		}
 	}
+	
+	@Test
+	public void test4_Arv5_RegistroJaExistente() throws InterruptedException {
+		synchronized (driver) {
+			gerenciaRegionalPage.switchToIframe(gerenciaRegionalPage.getElementById(applicationIframeId));
+			newGerenciaRegional = gerenciaRegionalPage.openIncluirGerenciaRegional();
+			String result = newGerenciaRegional.incluirGerenciaRegionalJaExistente();
+			Assert.assertEquals(result.contentEquals("Erro na inclusão - O registro já existe: Sigla"),true);
+		}
+	}
 }
