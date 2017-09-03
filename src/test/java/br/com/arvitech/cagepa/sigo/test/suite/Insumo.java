@@ -64,4 +64,15 @@ public class Insumo extends BaseTestCase {
 			Assert.assertFalse(insumoPage.getLastRowName() == NewInsumoPage.getDescricaoValue());
 		}
 	}
+	
+	@Test
+	public void test3_Arv42_RegistroJaExistente() throws InterruptedException {
+		synchronized (driver) {
+			insumoPage.switchToIframe(insumoPage.getElementById(applicationIframeId));
+			newInsumoPage = insumoPage.openIncluirInsumo();
+			String result = newInsumoPage.incluirGerenciaRegionalJaExistente();
+			Assert.assertEquals(result.contentEquals("Erro na inclusão - O registro já existe: Sigla"),true);
+
+		}
+	}
 }
