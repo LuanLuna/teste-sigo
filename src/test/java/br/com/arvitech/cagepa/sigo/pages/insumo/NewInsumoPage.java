@@ -67,6 +67,18 @@ public class NewInsumoPage extends GenericPageObject<NewInsumoPage> {
 		return result;
 	}
 	
+	public String incluirGerenciaRegionalJaExistente() throws InterruptedException {
+		fillField(descricaoField, descricaoValue);
+		fillField(valorField, valorValue);
+		includeBtn.click();
+		
+		acceptAlert();
+		String result = getElementText(getElementByClassName("scFormErrorMessage"));
+
+		return result;
+	}
+
+	
 	public WebElement getIncludeBtn() {
 		return includeBtn;
 	}
